@@ -24,43 +24,6 @@ The EMX1 locus is one of the most widely used targets for benchmarking CRISPR-Ca
 
 Using EMX1 allows this project to focus on assay design, analytical rigor, QC, and reporting, rather than target-specific biology
 
-Repository Structure
-
-genome-editing-assay-design-and-analysis/
-
-├── assay_design/
-
-├── primers.csv
-└── dpcr_assays.csv
-
-├── data/
-
-│   ├── reference/
-│   │   └── EMX1_reference.fasta
-│   ├── amplicon_ngs/
-│   │   └── metadata/
-│   │       └── sample_sheet.csv
-│   └── dpcr/
-│       └── metadata/
-│           └── dpcr_sample_sheet.csv
-
-├── analysis/
-
-│   ├── notebooks/
-│   │   └── demo_analysis_EMX1.ipynb
-│   └── utils/
-│       ├── helper_functions.py
-│       └── dpcr_qc.py
-
-├── qc/
-
-│   └── qc_metrics.md
-├── results/
-│   ├── qc_summary.csv
-│   ├── editing_summary.csv
-│   ├── sanger_qc_summary.csv
-│   └── dpcr_summary.csv
-└── README.md
 
 Assay Design Strategy
 PCR assays were designed to flank the expected CRISPR cut site, enabling detection of indels by both Sanger sequencing and amplicon NGS.
@@ -175,7 +138,7 @@ results/dpcr_replicate_concordance.csv
 Quality Control Framework
 
 
-QC is treated as a first-class deliverable, consistent with shared resource laboratory standards.
+QC framework was implemented to ensure analytical rigor and reporducibility consistent with shared resource laboratory standards.
 
 QC metrics include:
 
@@ -196,3 +159,38 @@ dPCR droplet counts and saturation
 Explicit QC thresholds and pass/fail logic are documented in:
 
 qc/qc_metrics.md
+
+Reporting and Interpretation
+
+A mock, client-facing report was generated to demonstrate how results would be communicated to investigators in a service setting. The report emphasizes clarity, actionable interpretation, and transparency regarding assay limitations.
+
+The report includes:
+
+Project summary and experimental overview
+
+Key results and figures
+
+Interpretation of editing outcomes
+
+Recommendations and next steps
+
+The finalized report and reusable templates are located in the reports/ directory.
+
+
+Repository Structure
+
+The repository is organized to reflect core facility workflows:
+
+assay_design/ — Primer design and assay documentation
+
+data/ — Reference sequences and example input data
+
+analysis/ — Sanger and amplicon NGS analysis workflows
+
+qc/ — Quality control metrics and criteria
+
+docs/ — SOP-style documentation
+
+reports/ — Client-facing reports and templates
+
+operations/ — Scaling, automation, and future services
